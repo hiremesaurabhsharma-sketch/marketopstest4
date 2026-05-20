@@ -1,0 +1,55 @@
+:root {
+  --bg: #0b1020;
+  --bg-soft: #121a33;
+  --card: #182243;
+  --text: #f4f7ff;
+  --muted: #b7bfd9;
+  --accent: #35d4c8;
+  --border: rgba(255, 255, 255, 0.15);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #243472 0%, var(--bg) 45%);
+}
+.container { width: min(1120px, 92%); margin: 0 auto; }
+.header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 16, 32, 0.8);
+  border-bottom: 1px solid var(--border);
+}
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+.brand { font-size: 1.15rem; font-weight: 800; letter-spacing: .7px; }
+.menu { display: flex; gap: 18px; flex-wrap: wrap; }
+.link, .footer-links a { text-decoration: none; color: var(--text); opacity: .9; }
+.link.active, .link:hover { color: var(--accent); opacity: 1; }
+main { min-height: calc(100vh - 170px); padding: 42px 0 56px; }
+.hero { text-align: center; margin-bottom: 30px; animation: fadeUp .7s ease both; }
+.hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); }
+.hero p { color: var(--muted); max-width: 780px; margin: 10px auto 0; }
+.section-title { font-size: clamp(1.4rem, 2.2vw, 2rem); margin: 0 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(220px,1fr)); gap: 16px; }
+.card {
+  background: linear-gradient(160deg, rgba(126,141,255,.26), rgba(24,34,67,.88));
+  border: 1px solid var(--border); border-radius: 16px; padding: 22px;
+  min-height: 140px; display: flex; align-items: center;
+  animation: fadeUp .6s ease both;
+  transition: transform .22s ease, border-color .22s ease;
+}
+.card:hover { transform: translateY(-6px); border-color: rgba(53,212,200,.6); }
+.content-page { animation: fadeUp .6s ease both; }
+.content-page p, .mail { color: var(--muted); }
+footer { border-top: 1px solid var(--border); padding: 26px 0 34px; }
+.footer-wrap { display:flex; justify-content: space-between; gap:16px; flex-wrap: wrap; }
+.footer-links { display:flex; gap:14px; flex-wrap: wrap; }
+.mail a { color: var(--accent); text-decoration: none; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 900px){ .grid{grid-template-columns:repeat(2,minmax(220px,1fr));} }
+@media (max-width: 620px){ .grid{grid-template-columns:1fr;} .navbar{flex-direction:column;align-items:flex-start;gap:8px;} }
