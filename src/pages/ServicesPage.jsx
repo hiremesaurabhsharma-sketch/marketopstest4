@@ -16,38 +16,16 @@ const features = [
 export default function ServicesPage() {
   return (
     <section>
-      <div className="hero glass-card tilt-float">
-        <span className="pill">Premium Growth Partner</span>
-        <h1>Design. Marketing. Performance.</h1>
-        <p>
-          Beautiful brand experiences with performance-first execution. We are currently polishing the full services list;
-          your exact services can be plugged in instantly once shared.
-        </p>
-        <div className="hero-cta-row">
-          <button className="btn btn-primary">Start Project</button>
-          <button className="btn btn-ghost">Explore Work</button>
-        </div>
+      <div className="hero">
+        <h1>Performance-Driven Digital Growth Solutions</h1>
+        <p>Scale faster with conversion-focused strategies, premium creative execution, and global-ready business operations.</p>
       </div>
 
-      <div className="section-head">
-        <h2 className="section-title">Services Preview</h2>
-        <span className="muted">(Final services can be updated later)</span>
-      </div>
-
+      <h2 className="section-title">Service Page</h2>
       <div className="grid">
-        {previewServices.map((service, index) => (
-          <article className="card glass-card" key={service} style={{ animationDelay: `${index * 80}ms` }}>
+        {services.map((service, index) => (
+          <article className="card" key={service} style={{ animationDelay: `${index * 90}ms` }}>
             <h3>{service}</h3>
-            <p>High-impact strategy and execution tailored for measurable business growth.</p>
-          </article>
-        ))}
-      </div>
-
-      <div className="feature-grid">
-        {features.map((f, index) => (
-          <article className="feature glass-card" key={f.title} style={{ animationDelay: `${index * 140}ms` }}>
-            <h4>{f.title}</h4>
-            <p>{f.text}</p>
           </article>
         ))}
       </div>
