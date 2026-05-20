@@ -1,16 +1,10 @@
-const previewServices = [
+const services = [
+  "Ecommerce Solutions",
   "Performance Marketing",
-  "Creative Strategy",
-  "Ecommerce Optimization",
-  "SEO & Content Systems",
-  "Web Experience Design",
-  "Global Growth Enablement",
-];
-
-const features = [
-  { title: "Real-Time Dashboard", text: "Campaign snapshots, funnel-level metrics, and clean growth reporting across channels." },
-  { title: "Creative Engine", text: "High-velocity ad creatives and landing variants built for conversion and retention." },
-  { title: "Revenue Automation", text: "Email, remarketing, and audience workflows designed to scale profitably." },
+  "Website & Developments",
+  "SEO ( Search Engine Optimization )",
+  "Marketing Creative",
+  "Overseas Business Development",
 ];
 
 export default function ServicesPage() {
