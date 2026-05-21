@@ -1,15 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MarketOps | Growth Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarketOps | Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #131a33;
+      --card: #182243;
+      --primary: #7e8dff;
+      --accent: #35d4c8;
+      --text: #f4f7ff;
+      --muted: #b7bfd9;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 10%, #1d2a56, var(--bg));
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(10px);
+      background: rgba(11, 16, 32, 0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .menu a,
+    .footer-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      opacity: 0.92;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .menu a:hover,
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 88px 0 54px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 18px auto 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .services {
+      padding: 24px 0 70px;
+    }
+
+    .section-title {
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(160deg, rgba(126, 141, 255, 0.22), rgba(24, 34, 67, 0.8));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      min-height: 160px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(53, 212, 200, 0.58);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .divider {
+      margin: 30px auto 0;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    footer {
+      padding: 36px 0 50px;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .mail {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .mail a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 920px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="brand">MARKETOPS</div>
+      <nav class="menu" aria-label="Main navigation">
+        <a href="#services">Service</a>
+        <a href="#about">About Us</a>
+        <a href="#case-study">Case Study</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h1>Performance-Driven Digital Growth Solutions</h1>
+      <p>
+        We build and scale brands through focused strategy, digital execution, and
+        conversion-first marketing operations.
+      </p>
+    </section>
+
+    <section class="services container" id="services">
+      <h2 class="section-title">Service Page</h2>
+      <div class="grid">
+        <article class="card"><h3>Ecommerce Solutions</h3></article>
+        <article class="card"><h3>Performance Marketing</h3></article>
+        <article class="card"><h3>Website &amp; Developments</h3></article>
+        <article class="card"><h3>SEO (Search Engine Optimization)</h3></article>
+        <article class="card"><h3>Marketing Creative</h3></article>
+        <article class="card"><h3>Overseas Business Development</h3></article>
+      </div>
+      <hr class="divider" />
+    </section>
+
+    <section class="container" id="about" style="padding-bottom: 24px;">
+      <h2 class="section-title" style="margin-bottom: 8px;">About Us</h2>
+      <p style="color: var(--muted); max-width: 760px;">
+        MarketOps helps modern businesses grow with integrated marketing, website,
+        and expansion strategies tailored to their goals.
+      </p>
+    </section>
+
+    <section class="container" id="case-study" style="padding-bottom: 24px;">
+      <h2 class="section-title" style="margin-bottom: 8px;">Case Study</h2>
+      <p style="color: var(--muted); max-width: 760px;">
+        We deliver measurable improvement in traffic, leads, and conversions through
+        data-backed campaign planning and optimization.
+      </p>
+    </section>
+
+    <section class="container" id="contact" style="padding-bottom: 48px;">
+      <h2 class="section-title" style="margin-bottom: 8px;">Contact Us</h2>
+      <p class="mail">Mail ID: <a href="mailto:connect@marketops.in">connect@marketops.in</a> (Business Query)</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Policy</a>
+        <a href="#">Careers</a>
+        <a href="#">Affiliate</a>
+        <a href="#">Learning</a>
+      </nav>
+      <p class="mail">© 2026 MarketOps. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
 </html>
